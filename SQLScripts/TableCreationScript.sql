@@ -1,0 +1,19 @@
+Use E_Comm
+Go
+
+CREATE TABLE Customers (
+CustomerID INT IDENTITY(1,1),
+EmailAddress VARCHAR(50) NOT NULL UNIQUE,
+Address VARCHAR(100) NOT NULL,
+CustomerName VARCHAR(50) NOT NULL,
+PRIMARY KEY(CustomerID)
+)
+
+CREATE TABLE Orders (
+OrderID INT IDENTITY (1,1),
+Quantity INT  NOT NULL ,
+CreatedDateTime DATETIME  NOT NULL,
+TotalPrice SMALLMONEY  NOT NULL,
+ItemName  VARCHAR(100)  NOT NULL,
+CustomerID INT	FOREIGN KEY REFERENCES Customers(CustomerID)
+)
