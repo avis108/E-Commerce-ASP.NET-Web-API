@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace E_Commerce_API.Models
 {
-
+	[MetadataType(typeof(CustomerMetaData))]
 	public partial class Customer
 	{
 
